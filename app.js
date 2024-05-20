@@ -2,8 +2,9 @@ require("dotenv").config();
 
 const mongoose = require("mongoose");
 const PORT = 3000;
+const password = encodeURIComponent('Karan@123');
 
-mongoose.connect("mongodb+srv://DynamicChatApp:Karan@123@cluster0.km6islo.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0");
+mongoose.connect(`mongodb+srv://DynamicChatApp:${password}@cluster0.km6islo.mongodb.net/UsersAndChats?retryWrites=true&w=majority&appName=Cluster0`);
 
 const express = require("express");
 const app = express();
