@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="css/styleLogin.css">
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap" rel="stylesheet">
+   <title>Dynamic Chat App</title>
+</head>
+<body>
+   <div class="register-container">
+      <div class="login-header">
+         <h1>REGISTER</h1>
+      </div>
+      <div class="login-main">
+         <form action="" method="POST" enctype="multipart/form-data">
+            <div class="form-control">
+               <label for="username">User Name</label>
+               <input type="text" name="name" placeholder="Enter name" required>
+            </div>
+
+            <div class="form-control">
+               <label for="useremail">Email</label>
+               <input type="email" name="email" placeholder="Enter email" required>
+            </div>
+
+            <div class="form-control">
+               <label for="password">Password</label>
+               <input type="password" name="password" placeholder="Enter Password" required>
+            </div>
+
+            <div class="form-control">
+               <label for="profile image">Image</label>
+               <input type="file" name="image" required>
+            </div>
+
+            <input type="submit" class="btn" value="REGISTER">
+            </form>
+      </div>
+
+      <div class="success-message">
+      <% 
+      if(typeof message != "undefined") {
+         %>
+            <p><%= message %> <a href="/" class="login-btn">Login Page</a></p>
+         <%
+      }
+      %>
+      </div>
+   </div>   
+
+</body>
+</html>

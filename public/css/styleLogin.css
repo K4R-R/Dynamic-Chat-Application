@@ -1,0 +1,107 @@
+*{
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+html{
+   font-size: 62.5%;
+   font-family: roboto,arial;
+   background-color: rgb(35, 35, 35);
+   color: white;
+}
+h1{
+   font-size: 80px;
+   font-weight: 300;
+}
+
+.login-container {
+	max-width: 500px;
+	margin: 120px auto;
+	color: #fff;
+}
+
+.register-container {
+	max-width: 500px;
+	margin: 80px auto;
+	color: #fff;
+}
+
+.login-header {
+	text-align: center;
+   background-color: rgb(0, 57, 149);
+	padding: 10px;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+   height: 120px;
+}
+
+.login-main {
+	padding: 30px 40px;
+	background-color: rgb(5, 97, 244);
+   font-size: 20px;
+   border-bottom-left-radius: 10px;
+   border-bottom-right-radius: 10px;
+   margin-bottom: 20px;
+}
+
+.login-main p {
+	margin-bottom: 20px;
+}
+
+.login-main .form-control {
+	margin-bottom: 20px;
+}
+
+.login-main label {
+	display: block;
+	margin-bottom: 5px;
+}
+
+.login-main input {
+   font-size: 20px;
+	padding: 5px;
+	height: 40px;
+	width: 100%;
+   border: none;
+   border-radius: 5px;
+}
+
+.login-main .btn {
+   font-size: 25px;
+   margin:0 auto;
+	display: block;
+   height: 50px;
+	width: 50%;
+   background-color: rgb(0, 57, 149);
+   border: none;
+   color: white;
+   text-align: center;
+   border-radius: 5px;
+}
+
+.login-main .btn:hover {
+   background-color: rgb(0, 72, 187);
+}
+
+.login-main a {
+   display: block;
+   color: white;
+   margin-top: 15px;
+   text-align: center;
+}
+
+.success-message a {
+   color: rgb(18, 208, 12) ;
+}
+
+.success-message {
+   color: rgb(18, 208, 12);
+   font-size: 30px;
+   text-align: center;
+}
+
+.unsuccess-message {
+   color: red;
+   font-size: 30px;
+   text-align: center;
+}
