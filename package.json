@@ -2,7 +2,7 @@
   "name": "dynamic-chat-application",
   "version": "1.0.0",
   "description": "chat application made using nodejs socket.io and mongodb",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
