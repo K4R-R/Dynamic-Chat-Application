@@ -21,7 +21,7 @@ const register = async (req,res) => {
       const user = new User({
          name:req.body.name,
          email:req.body.email,
-         image:"userImages/" + req.file.filename,
+         image:"UserImages/" + req.file.filename,
          password: passwordHash
       });
 
