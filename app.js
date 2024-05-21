@@ -1,7 +1,7 @@
 require("dotenv").config();
 
 const mongoose = require("mongoose");
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 const password = encodeURIComponent('Karan@123');
 
 mongoose.connect(`mongodb+srv://DynamicChatApp:${password}@cluster0.km6islo.mongodb.net/UsersAndChats?retryWrites=true&w=majority&appName=Cluster0`);
@@ -58,5 +58,5 @@ usp.on("connection",async (socket) => {
 });
 
 http.listen(PORT, () => {
-   console.log("server is running on port 3000")
+   console.log(`Server is running on port ${PORT}`);
 });
