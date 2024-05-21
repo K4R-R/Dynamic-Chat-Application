@@ -197,8 +197,9 @@ html{
 .senders-message p{
   display: inline;
   background-color: rgb(0, 57, 149);
-  border-radius: 5px;
-  padding: 10px 15px 10px 40px;
+  border-radius: 10px;
+  padding: 10px 15px 10px 20px;
+  border-bottom-right-radius: 0px;
 }
 .fa-times{
   padding-left: 10px;
@@ -215,8 +216,9 @@ html{
 .receivers-message p{
   display: inline;
   background-color: rgb(63, 63, 63);
-  border-radius: 5px;
-  padding: 10px 40px 10px 15px;
+  border-radius: 10px;
+  padding: 10px 20px 10px 15px;
+  border-bottom-left-radius: 0px;
 }
 .start-head{
   text-align: center;
