@@ -4,7 +4,14 @@ const bodyParser = require("body-parser");
 
 const session = require("express-session");
 const {SESSION_SECRET} = process.env;
-userRoute.use(session({secret:SESSION_SECRET}));
+// userRoute.use(session({secret:SESSION_SECRET}));
+userRoute.use(session({
+   secret: SESSION_SECRET,
+   resave: false, // Set this option (false is usually preferred)
+   saveUninitialized: false, // Set this option (false is usually preferred)
+   cookie: { secure: false } // Add secure if you're using HTTPS
+}));
+
 
 userRoute.use(bodyParser.json());
 userRoute.use(bodyParser.urlencoded({extended:true}));

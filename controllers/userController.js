@@ -6,10 +6,11 @@ const path = require("path");
 const registerLoad = async (req,res) => {
    try {
       
-      res.render("register");
+      return res.render("register");
 
    } catch (error) {
       console.log(error.message);
+      return res.status(500).send("Internal Server Error");
    }
 };
 
@@ -27,20 +28,22 @@ const register = async (req,res) => {
 
       await user.save();
 
-      res.render("register",{ message:"Registration Successful"});
+      return res.render("register",{ message:"Registration Successful"});
       
    } catch (error) {
       console.log(error.message);
+      return res.status(500).send("Internal Server Error");
    }
 };
 
 const loadLogin = async (req,res) => {
    try {
       
-      res.render("login");
+      return res.render("login");
 
    } catch (error) {
       console.log(error.message);
+      return res.status(500).send("Internal Server Error");
    }
 };
 
@@ -55,16 +58,16 @@ const login = async (req,res) => {
          const passMatch = await bcrypt.compare(password,userData.password);
          if(passMatch) {
             req.session.user = userData;
-            res.redirect("dashboard");
+            return res.redirect("dashboard");
          } else {
-            res.render("login",{message:"Email and Password is Incorrect !"});
+            return res.render("login",{message:"Email and Password is Incorrect !"});
          }
       } else {
-         res.render("login",{message:"Not a Registered Email !"});
+         return res.render("login",{message:"Not a Registered Email !"});
       };
-
    } catch (error) {
       console.log(error.message);
+      return res.status(500).send("Internal Server Error");
    }
 };
 
@@ -72,10 +75,11 @@ const logout = async (req,res) => {
    try {
       
       req.session.destroy();
-      res.redirect("/");
+      return res.redirect("/");
 
    } catch (error) {
       console.log(error.message);
+      return res.status(500).send("Internal Server Error");
    }
 };
 
@@ -84,10 +88,11 @@ const loadDashboard = async (req,res) => {
 
       var users = await User.find({_id: {$nin: [req.session.user._id] } });
       
-      res.render("dashboard",{user:req.session.user,users:users});
+      return res.render("dashboard",{user:req.session.user,users:users});
 
    } catch (error) {
       console.log(error.message);
+      return res.status(500).send("Internal Server Error");
    }
 };
 
@@ -101,10 +106,10 @@ const saveChat = async (req,res) => {
       });
 
       var newChat = await chat.save();
-      res.status(200).send({success:true, msg:"chat saved",data:newChat});   
+      return res.status(200).send({success:true, msg:"chat saved",data:newChat});   
 
    } catch (error) {
-      res.status(400).send({success:false, msg:error.message});  
+      return res.status(400).send({success:false, msg:error.message});  
    }
 };
 
@@ -112,10 +117,10 @@ const deleteChat = async (req,res) => {
    try {
 
       await Chat.deleteOne({ _id:req.body.id });
-      res.status(200).send({success:true});
+      return res.status(200).send({success:true});
 
    } catch (error) {
-      res.status(400).send({success:false, msg:error.message});  
+      return res.status(400).send({success:false, msg:error.message});  
    }
 };
 
